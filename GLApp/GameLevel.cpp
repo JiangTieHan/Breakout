@@ -4,15 +4,17 @@
 #include <sstream>
 
 
-void GameLevel::Load(const char* file, unsigned int levelWidth, unsigned int levelHeight)
+void GameLevel::Load(const char* path, unsigned int levelWidth, unsigned int levelHeight)
 {
+    std::string fullPath = ResourceManager::ResourceRootDirectory + path;
+
     // clear old data
     this->Bricks.clear();
     // load from file
     unsigned int tileCode;
     GameLevel level;
     std::string line;
-    std::ifstream fstream(file);
+    std::ifstream fstream(fullPath);
     std::vector<std::vector<unsigned int>> tileData;
     if (fstream)
     {

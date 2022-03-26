@@ -9,6 +9,7 @@
 class ResourceManager
 {
 public:
+	static std::string ResourceRootDirectory;
 	static std::map<std::string, Shader> Shaders;
 	static std::map<std::string, Texture2D> Textures;
 
@@ -29,5 +30,7 @@ private:
 	static Shader loadShaderFromFile(const char* vShaderFile, const char* fShaderFile, const char* gShaderFile = nullptr);
 
 	static Texture2D loadTextureFromFile(const char* file, bool alpha);
+
+	static std::string readResourceFile(const char* file);
 };
 

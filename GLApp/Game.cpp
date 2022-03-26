@@ -39,6 +39,8 @@ Game::~Game()
 
 void Game::Init()
 {
+    ResourceManager::ResourceRootDirectory = "/Users/Jack/source/repos/Breakout/GLApp/resources/";
+
     // load shaders
     ResourceManager::LoadShader("shaders/sprite.vs", "shaders/sprite.frag", nullptr, "sprite");
     ResourceManager::LoadShader("shaders/particle.vs", "shaders/particle.frag", nullptr, "particle");
