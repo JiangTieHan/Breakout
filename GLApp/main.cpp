@@ -3,6 +3,7 @@
 
 #include "game.h"
 #include "resource_manager.h"
+#include "network/NetworkController.h"
 
 #include <iostream>
 
@@ -16,6 +17,7 @@ const unsigned int SCREEN_WIDTH = 800;
 const unsigned int SCREEN_HEIGHT = 600;
 
 Game Breakout(SCREEN_WIDTH, SCREEN_HEIGHT);
+NetworkController Network;
 
 int main(int argc, char* argv[])
 {
@@ -51,6 +53,7 @@ int main(int argc, char* argv[])
     // initialize game
     // ---------------
     Breakout.Init();
+    Network.Init();
 
     // deltaTime variables
     // -------------------
@@ -73,6 +76,7 @@ int main(int argc, char* argv[])
         // update game state
         // -----------------
         Breakout.Update(deltaTime);
+        Network.Update();
 
         // render
         // ------
